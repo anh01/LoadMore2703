@@ -1,0 +1,73 @@
+
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('black off the ','124','undefined','leather','Khaki', '54.jpeg','55.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('contrast embro','121','undefined','leather','Fuchsia', '56.jpeg','57.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('floral print t','133','undefined','cotton','LimeGreen', '58.jpeg','59.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('star maxi dres','143','undefined','fur','Wheat', '60.jpeg','61.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('tropical print','157','undefined','cotton','DarkOliveGreen', '62.jpeg','63.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('high neck gode','135','undefined','wool','DarkGreen', '64.jpeg','65.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('ruffle wrap fr','107','undefined','polyesters','Tan', '66.jpeg','67.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('floral print l','149','undefined','polyesters','Orchid', '70.jpeg','71.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('floral print s','146','undefined','silk','DarkGoldenRod', '72.jpeg','73.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('cold shoulder ','122','undefined','silk','Magenta', '74.jpeg','75.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('chiffon halter','132','undefined','polyesters','Cyan', '78.jpeg','79.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('high slit maxi','134','undefined','cotton','LightGreen', '80.jpeg','81.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('strappy cut-ou','117','undefined','fur','Green', '82.jpeg','83.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('tie waist popo','142','undefined','polyesters','IndianRed', '84.jpeg','85.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('floral surplic','141','undefined','cotton','Cyan', '86.jpeg','87.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('lace sleeve si','117','undefined','silk','RoyalBlue', '88.jpeg','89.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('asymmetrical g','124','undefined','leather','MediumSeaGreen', '90.jpeg','91.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('mesh embellish','109','undefined','leather','Gainsboro', '92.jpeg','93.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('deco sequin em','133','undefined','cotton','DarkSeaGreen', '94.jpeg','95.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('mock neck zip ','118','undefined','polyesters','Tomato', '96.jpeg','97.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('floral surplic','152','undefined','polyesters','DarkGrey', '98.jpeg','99.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('mock neck keyh','127','undefined','polyesters','Red', '100.jpeg','101.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('faux wrap chif','137','undefined','cotton','Tomato', '102.jpeg','103.jpeg');
+INSERT INTO public."Product"(
+        name, price, "desc", material, color, image1, image2)
+	VALUES ('pieced lace zi','148','undefined','wool','DarkGoldenRod', '104.jpeg','105.jpeg');

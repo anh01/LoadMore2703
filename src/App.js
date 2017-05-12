@@ -17,13 +17,13 @@ export default class App extends Component {
 
     componentDidMount() {
         fetch('http://localhost:3000/products/1')
-            .then(res => res.json())
-            .then(resJSON => {
-                this.arr = [...resJSON, ...this.arr];
-                this.setState({
-                    listColor: this.state.listColor.cloneWithRows(this.arr)
-                })
-            })
+        .then(res => res.json())
+        .then(resJSON => {
+            this.arr = [...resJSON, ...this.arr];
+            this.setState({
+                listColor: this.state.listColor.cloneWithRows(this.arr)
+            });
+        });
     }
 
     render() {
