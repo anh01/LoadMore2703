@@ -8,9 +8,9 @@ export default class App extends Component {
         super(props);
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
-            listColor: ds,
+            listProducts: ds,
             refreshing: false,
-            page: 1
+            idMax: 0
         };
         this.arr = [];
     }
@@ -21,7 +21,8 @@ export default class App extends Component {
         .then(resJSON => {
             this.arr = [...resJSON, ...this.arr];
             this.setState({
-                listColor: this.state.listColor.cloneWithRows(this.arr)
+                listProducts: this.state.listProducts.cloneWithRows(this.arr),
+                idMax: resJSON[resJSON.length - 1].id
             });
         });
     }
@@ -30,24 +31,23 @@ export default class App extends Component {
         return (
             <View style={{ backgroundColor: 'lightblue', flex: 1 }}>
                 <ListView
-                    dataSource={this.state.listColor}
-                    renderRow={color => (
-                        <Text style={{ color: 'gray', fontSize: 40, margin: 30 }}>{color}</Text>
+                    dataSource={this.state.listProducts}
+                    renderRow={product => (
+                        <Text style={{ color: 'gray', fontSize: 40, margin: 30 }}>{product.name}</Text>
                     )}
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
                             onRefresh={() => {
                                 this.setState({ refreshing: true });
-                                const newPage = this.state.page + 1;
-                                fetch(`http://localhost:3000/products/${newPage}`)
+                                fetch(`http://localhost:3000/products/${this.state.idMax}`)
                                     .then(res => res.json())
                                     .then(resJSON => {
                                         this.arr = [...resJSON, ...this.arr];
                                         this.setState({
                                             refreshing: false,
-                                            listColor: this.state.listColor.cloneWithRows(this.arr),
-                                            page: newPage
+                                            listProducts: this.state.listProducts.cloneWithRows(this.arr),
+                                            idMax: resJSON[resJSON.length - 1].id
                                         });
                                     });
                             }}
