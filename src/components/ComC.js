@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+import { connect } from 'react-redux';
 
-
-export default class ComC extends Component {
+class ComC extends Component {
     render() {
         return (
             <View style={{ backgroundColor: 'lightgray', padding: 20, margin: 20 }}>
                 <Text>Component C</Text>
                 <TouchableOpacity 
-                    onPress={this.props.incrNum}
+                    onPress={() => {
+                        const { dispatch } = this.props;
+                        dispatch({ type: 'INCR' });
+                    }}
                     style={{ 
                         backgroundColor: 'white', 
                         padding: 20, 
@@ -22,6 +25,8 @@ export default class ComC extends Component {
         );
     }
 }
+
+export default connect()(ComC);
 
 /*
     state =>
