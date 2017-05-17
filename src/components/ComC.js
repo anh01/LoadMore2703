@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { connect } from 'react-redux';
 
+const buttonStyle = {
+    backgroundColor: 'white', 
+    padding: 20, 
+    borderRadius: 5,
+    alignItems: 'center',
+    margin: 10 
+};
+
 class ComC extends Component {
     render() {
         return (
@@ -12,12 +20,7 @@ class ComC extends Component {
                         const { dispatch } = this.props;
                         dispatch({ type: 'INCR' });
                     }}
-                    style={{ 
-                        backgroundColor: 'white', 
-                        padding: 20, 
-                        borderRadius: 5,
-                        alignItems: 'center' 
-                    }}
+                    style={buttonStyle}
                 >
                     <Text style={{ color: '#313183', fontWeight: 'bold' }}>ADD</Text>
                 </TouchableOpacity>
@@ -26,12 +29,7 @@ class ComC extends Component {
                         const { dispatch } = this.props;
                         dispatch({ type: 'CHANGE_COLOR' });
                     }}
-                    style={{ 
-                        backgroundColor: 'white', 
-                        padding: 20, 
-                        borderRadius: 5,
-                        alignItems: 'center' 
-                    }}
+                    style={buttonStyle}
                 >
                     <Text style={{ color: '#313183', fontWeight: 'bold' }}>CHANGE COLOR</Text>
                 </TouchableOpacity>
