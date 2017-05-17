@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
+
 import { connect } from 'react-redux';
+import { incrNum, descNum, changeColor } from '../redux/action';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -17,8 +19,7 @@ class ComC extends Component {
                 <Text>Component C</Text>
                 <TouchableOpacity 
                     onPress={() => {
-                        const { dispatch } = this.props;
-                        dispatch({ type: 'INCR' });
+                        this.props.incrNum();
                     }}
                     style={buttonStyle}
                 >
@@ -26,8 +27,7 @@ class ComC extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity 
                     onPress={() => {
-                        const { dispatch } = this.props;
-                        dispatch({ type: 'CHANGE_COLOR' });
+                        this.props.changeColor();
                     }}
                     style={buttonStyle}
                 >
@@ -38,7 +38,7 @@ class ComC extends Component {
     }
 }
 
-export default connect()(ComC);
+export default connect(undefined, { incrNum, descNum, changeColor })(ComC);
 
 /*
     state =>
