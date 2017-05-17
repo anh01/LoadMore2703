@@ -21,6 +21,20 @@ class ComC extends Component {
                 >
                     <Text style={{ color: '#313183', fontWeight: 'bold' }}>ADD</Text>
                 </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => {
+                        const { dispatch } = this.props;
+                        dispatch({ type: 'CHANGE_COLOR' });
+                    }}
+                    style={{ 
+                        backgroundColor: 'white', 
+                        padding: 20, 
+                        borderRadius: 5,
+                        alignItems: 'center' 
+                    }}
+                >
+                    <Text style={{ color: '#313183', fontWeight: 'bold' }}>CHANGE COLOR</Text>
+                </TouchableOpacity>
             </View>
         );
     }

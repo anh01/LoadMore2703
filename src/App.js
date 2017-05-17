@@ -18,20 +18,13 @@ export default class App extends Component {
     }
 }
 
-const defaultState = { num: 0 };
+const defaultState = { num: 0, isGreen: false };
 
 function reducer(state = defaultState, action) {
-    if (action.type === 'INCR') return { num: state.num + 1 };
-    if (action.type === 'DECS') return { num: state.num - 1 };
+    if (action.type === 'INCR') return { num: state.num + 1, isGreen: state.isGreen };
+    if (action.type === 'DECS') return { num: state.num - 1, isGreen: state.isGreen };
+    if (action.type === 'CHANGE_COLOR') return { num: state.num, isGreen: !state.isGreen };
     return state;
 }
 
 const store = createStore(reducer);
-
-console.log(store.getState());
-
-store.dispatch({ type: 'INCR' });
-console.log(store.getState());
-
-store.dispatch({ type: 'DECS' });
-console.log(store.getState());

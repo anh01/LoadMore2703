@@ -5,10 +5,11 @@ import ComB from './ComB';
 
 class ComA extends Component {
     render() {
+        const color = this.props.isGreen ? 'green' : 'white';
         return (
             <View style={{ backgroundColor: '#D87B69', padding: 20 }}>
                 <Text>Component A</Text>
-                <Text style={{ fontSize: 20, color: '#fff' }}>
+                <Text style={{ fontSize: 20, color }}>
                     Number: {this.props.number}
                 </Text>
                 <ComB />
@@ -17,4 +18,9 @@ class ComA extends Component {
     }
 }
 
-export default connect(state => ({ number: state.num }))(ComA);
+const mapStateToProps = state => ({ 
+    number: state.num,
+    isGreen: state.isGreen 
+});
+
+export default connect(mapStateToProps)(ComA);
