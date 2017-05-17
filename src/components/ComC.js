@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 
 import { connect } from 'react-redux';
-import { incrNum, descNum, changeColor } from '../redux/action';
+import { incrNum, descNum, changeColor, changeLength, getLength } from '../redux/action';
 
 const buttonStyle = {
     backgroundColor: 'white', 
@@ -13,32 +13,39 @@ const buttonStyle = {
 };
 
 class ComC extends Component {
+    
+    getArrLength() {
+        this.props.getLength();
+    }
+
     render() {
         return (
             <View style={{ backgroundColor: 'lightgray', padding: 20, margin: 20 }}>
                 <Text>Component C</Text>
                 <TouchableOpacity 
-                    onPress={() => {
-                        this.props.incrNum();
-                    }}
+                    onPress={() => this.props.incrNum()}
                     style={buttonStyle}
                 >
                     <Text style={{ color: '#313183', fontWeight: 'bold' }}>ADD</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={() => {
-                        this.props.changeColor();
-                    }}
+                    onPress={() => this.props.changeColor()}
                     style={buttonStyle}
                 >
                     <Text style={{ color: '#313183', fontWeight: 'bold' }}>CHANGE COLOR</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={this.getArrLength.bind(this)}
+                    style={buttonStyle}
+                >
+                    <Text style={{ color: '#313183', fontWeight: 'bold' }}>GET LENGTH</Text>
                 </TouchableOpacity>
             </View>
         );
     }
 }
 
-export default connect(undefined, { incrNum, descNum, changeColor })(ComC);
+export default connect(undefined, { incrNum, descNum, changeColor, changeLength, getLength })(ComC);
 
 /*
     state =>

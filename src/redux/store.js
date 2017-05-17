@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 // const defaultState = { num: 0, isGreen: false };
 
@@ -13,7 +14,16 @@ function isGreenReducer(state = false, action) {
     return state;
 }
 
-const reducer = combineReducers({ num: numReducer, isGreen: isGreenReducer });
+function arrLengthReducer(state = 0, action) {
+    if (action.type === 'CHANGE_LENGTH') return action.length;
+    return state;
+}
+
+const reducer = combineReducers({ 
+    num: numReducer, 
+    isGreen: isGreenReducer,
+    length: arrLengthReducer 
+});
 
 // function reducer(state = defaultState, action) {
 //     if (action.type === 'INCR') return { ...state, num: state.num + 1 };
@@ -22,6 +32,6 @@ const reducer = combineReducers({ num: numReducer, isGreen: isGreenReducer });
 //     return state;
 // }
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store;

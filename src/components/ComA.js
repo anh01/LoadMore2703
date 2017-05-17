@@ -12,6 +12,9 @@ class ComA extends Component {
                 <Text style={{ fontSize: 20, color }}>
                     Number: {this.props.number}
                 </Text>
+                <Text style={{ fontSize: 20, color: 'white' }}>
+                    LENGTH: {this.props.length}
+                </Text>
                 <ComB />
             </View>
         );
@@ -20,7 +23,8 @@ class ComA extends Component {
 
 const mapStateToProps = state => ({ 
     number: state.num,
-    isGreen: state.isGreen 
+    isGreen: state.isGreen,
+    length: state.length 
 });
 
 export default connect(mapStateToProps)(ComA);
