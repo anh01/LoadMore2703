@@ -46,18 +46,23 @@ export default class SignUp extends Component {
         return (
             <View>
                 <TextInput 
+                    autoCorrect={false}
                     style={inputStyle} 
                     placeholder="Enter your name" 
                     value={this.state.name}
                     onChangeText={text => this.setState({ name: text })}
                 />
                 <TextInput 
+                    autoCorrect={false}
+                    autoCapitalize="none"
                     style={inputStyle} 
                     placeholder="Enter your email" 
                     value={this.state.email}
                     onChangeText={text => this.setState({ email: text })}
                 />
                 <TextInput 
+                    autoCorrect={false}
+                    autoCapitalize="none"
                     style={inputStyle} 
                     placeholder="Enter your password" 
                     value={this.state.password}
@@ -65,21 +70,28 @@ export default class SignUp extends Component {
                     onChangeText={text => this.setState({ password: text })}
                 />
                 <TextInput 
+                    autoCorrect={false}
                     style={inputStyle} 
+                    autoCapitalize="none"
                     placeholder="Re-enter your password" 
                     value={this.state.rePassword}
                     secureTextEntry
                     onChangeText={text => this.setState({ rePassword: text })}
                 />
                 <TextInput 
+                    autoCorrect={false}
+                    autoCapitalize="none"
                     style={inputStyle} 
+                    autoCapitalize="none"
                     placeholder="Enter your address" 
                     value={this.state.address}
                     secureTextEntry
                     onChangeText={text => this.setState({ address: text })}
                 />
                 <TextInput 
+                    autoCorrect={false}
                     style={inputStyle} 
+                    autoCapitalize="none"
                     placeholder="Enter your phone number" 
                     value={this.state.phone}
                     secureTextEntry

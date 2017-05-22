@@ -16,13 +16,18 @@ export default class SignIn extends Component {
         return (
             <View>
                 <TextInput
+                    autoCorrect={false}
                     style={inputStyle}
                     placeholder="Enter your email"
                     value={email}
+                    autoCapitalize="none"
                     onChangeText={text => this.setState({ email: text })}
+                    underlineColorAndroid="transparent"
                 />
                 <TextInput
+                    autoCorrect={false}
                     style={inputStyle}
+                    autoCapitalize="none"
                     placeholder="Enter your password"
                     value={password}
                     onChangeText={text => this.setState({ password: text })}
