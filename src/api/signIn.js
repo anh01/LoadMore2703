@@ -1,5 +1,5 @@
 const signIn = (email, password) => (
-    fetch('http://localhost:3000', {
+    fetch('http://localhost:3000/dangnhap', {
         method: 'POST',
         headers: {
             Accept: 'application/json',

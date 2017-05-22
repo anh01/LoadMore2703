@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import signInAPI from '../api/signIn';
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -8,6 +9,12 @@ export default class SignIn extends Component {
             email: '',
             password: ''
         };
+    }
+
+    onSignIn() {
+        const { email, password } = this.state;
+        signInAPI(email, password)
+        .then(res => console.log(res));
     }
 
     render() {
@@ -33,7 +40,7 @@ export default class SignIn extends Component {
                     onChangeText={text => this.setState({ password: text })}
                     secureTextEntry
                 />
-                <TouchableOpacity style={bigButton} >
+                <TouchableOpacity style={bigButton} onPress={this.onSignIn.bind(this)}>
                     <Text style={buttonText}>SIGN IN NOW</Text>
                 </TouchableOpacity>
             </View>
