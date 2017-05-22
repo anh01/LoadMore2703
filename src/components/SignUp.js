@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import signUpAPI from '../api/signUp';
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -40,6 +41,11 @@ export default class SignUp extends Component {
         this.setState({ email: '' });
     }
 
+    onSignUp() {
+        const { name, email, address, phone, password } = this.state;
+        signUpAPI(email, password, address, name, phone)
+        .then(res => console.log(res));
+    }
 
     render() {
         const { inputStyle, bigButton, buttonText } = styles;
@@ -75,7 +81,6 @@ export default class SignUp extends Component {
                     autoCapitalize="none"
                     placeholder="Re-enter your password" 
                     value={this.state.rePassword}
-                    secureTextEntry
                     onChangeText={text => this.setState({ rePassword: text })}
                 />
                 <TextInput 
@@ -85,7 +90,6 @@ export default class SignUp extends Component {
                     autoCapitalize="none"
                     placeholder="Enter your address" 
                     value={this.state.address}
-                    secureTextEntry
                     onChangeText={text => this.setState({ address: text })}
                 />
                 <TextInput 
@@ -94,10 +98,9 @@ export default class SignUp extends Component {
                     autoCapitalize="none"
                     placeholder="Enter your phone number" 
                     value={this.state.phone}
-                    secureTextEntry
                     onChangeText={text => this.setState({ phone: text })}
                 />
-                <TouchableOpacity style={bigButton}>
+                <TouchableOpacity style={bigButton} onPress={this.onSignUp.bind(this)}>
                     <Text style={buttonText}>SIGN UP NOW</Text>
                 </TouchableOpacity>
             </View>
