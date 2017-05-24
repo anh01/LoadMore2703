@@ -14,7 +14,9 @@ export default class SignIn extends Component {
     onSignIn() {
         const { email, password } = this.state;
         signInAPI(email, password)
-        .then(res => console.log(res));
+        .then(res => {
+            if (res !== 'THAT_BAI') this.props.gotoPrivatePlace(res.user);
+        });
     }
 
     render() {

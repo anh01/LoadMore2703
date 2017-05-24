@@ -7,7 +7,7 @@ const signIn = (email, password) => (
         },
         body: JSON.stringify({ email, password })
     })
-    .then(res => res.text())
+    .then(res => res.json())
 );
 
 export default signIn;

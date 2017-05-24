@@ -5,11 +5,16 @@ import {
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import PrivatePlace from './PrivatePlace';
 
 export default class Authentication extends Component {
     constructor(props) {
         super(props);
-        this.state = { isSignIn: true };
+        this.state = { isSignIn: true, user: null };
+    }
+
+    gotoPrivatePlace(user) {
+        this.setState({ user });
     }
 
     gotoSignIn() {
@@ -30,9 +35,12 @@ export default class Authentication extends Component {
             activeStyle, inactiveStyle
         } = styles;
 
-        const { isSignIn } = this.state;
-        const mainJSX = isSignIn ? <SignIn /> : <SignUp gotoSignIn={this.gotoSignIn.bind(this)} />;
+        const { isSignIn, user } = this.state;
+        const mainJSX = isSignIn ? 
+            <SignIn gotoPrivatePlace={this.gotoPrivatePlace.bind(this)} /> 
+            : <SignUp gotoSignIn={this.gotoSignIn.bind(this)} />;
         return (
+            user ? <PrivatePlace user={user} /> :
             <View style={container}>
                 {mainJSX}
                 <View style={controlStyle}>
