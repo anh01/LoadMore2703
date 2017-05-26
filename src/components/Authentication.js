@@ -19,8 +19,8 @@ export default class Authentication extends Component {
         getToken()
         .then(token => checkUserState(token))
         .then(res => {
-            if (res === 'THAT_BAI') return console.log('CHUA CO TOKEN');
-            this.gotoPrivatePlace('KHOA PHAM');
+            if (res.error) return console.log('CHUA CO TOKEN');
+            this.gotoPrivatePlace(res);
         })
         .catch(err => console.log(`LOI CHECK: ${err}`));
     }

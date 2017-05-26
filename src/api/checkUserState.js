@@ -7,7 +7,7 @@ const checkUserState = (token) => (
         },
         body: JSON.stringify({ token })
     })
-    .then(res => res.text())
+    .then(res => res.json())
 );
 
 export default checkUserState;
