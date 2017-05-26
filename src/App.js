@@ -12,5 +12,3 @@ export default class App extends Component {
 }
 
 // saveToken('XIN CHAO CAC BAN');
-getToken()
-.then(token => console.log(token));

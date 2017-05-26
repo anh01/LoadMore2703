@@ -17,6 +17,7 @@ export default class SignIn extends Component {
         signInAPI(email, password)
         .then(res => {
             if (!res.user) return console.log('DANG NHAP THAT BAI');
+            this.props.gotoPrivatePlace(res.user);
             saveToken(res.token);
         });
     }

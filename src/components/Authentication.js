@@ -6,11 +6,23 @@ import {
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import PrivatePlace from './PrivatePlace';
+import getToken from '../api/getToken';
+import checkUserState from '../api/checkUserState';
 
 export default class Authentication extends Component {
     constructor(props) {
         super(props);
         this.state = { isSignIn: true, user: null };
+    }
+
+    componentDidMount() {
+        getToken()
+        .then(token => checkUserState(token))
+        .then(res => {
+            if (res === 'THAT_BAI') return console.log('CHUA CO TOKEN');
+            this.gotoPrivatePlace('KHOA PHAM');
+        })
+        .catch(err => console.log(`LOI CHECK: ${err}`));
     }
 
     gotoPrivatePlace(user) {
