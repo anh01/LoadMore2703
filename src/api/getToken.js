@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native';
 
-const saveToken = async () => {
+const getToken = async () => {
     try {
         return await AsyncStorage.getItem('@TOKEN');
     } catch (err) {
@@ -8,4 +8,4 @@ const saveToken = async () => {
     }
 };
 
-module.exports = saveToken;
+module.exports = getToken;

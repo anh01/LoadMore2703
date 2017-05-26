@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import signInAPI from '../api/signIn';
+import saveToken from '../api/saveToken';
 
 export default class SignIn extends Component {
     constructor(props) {
@@ -15,7 +16,8 @@ export default class SignIn extends Component {
         const { email, password } = this.state;
         signInAPI(email, password)
         .then(res => {
-            if (res !== 'THAT_BAI') this.props.gotoPrivatePlace(res.user);
+            if (!res.user) return console.log('DANG NHAP THAT BAI');
+            saveToken(res.token);
         });
     }
 
